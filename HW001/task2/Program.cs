@@ -13,7 +13,11 @@ if (numA > numB)
 {
     Console.WriteLine($"max = {numA}");
 }
-else
+else if (numB > numA)
 {
     Console.WriteLine($"max = {numB}");
+}
+else
+{
+    Console.WriteLine($"числа равны {numA} = {numB}");
 }
