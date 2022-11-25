@@ -76,3 +76,4 @@ Console.WriteLine();
 int pos = IndexОf(array, 4444);
 // 6. выводим значение позиции
 Console.WriteLine(pos);
+
