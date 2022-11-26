@@ -1,7 +1,7 @@
 ﻿// Математические операции
 // int a = -4;
 double a = 2.22222;
-int b = 3;
+// int b = 3;
 
 // int result = Math.Abs(a); // модуль числа из библитеки математики
 // int result = Math.Max(a, b); // max min из двух значений
