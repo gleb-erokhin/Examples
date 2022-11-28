@@ -4,7 +4,7 @@
 // 782 -> 8
 // 918 -> 1
 
-// Console.WriteLine("Введите число ");
-// int num = Convert.ToInt32(Console.ReadLine());
-// int result = (num / 10) % 10;
-// Console.WriteLine(result);
+Console.WriteLine("Введите число ");
+int num = Convert.ToInt32(Console.ReadLine());
+int result = (num / 10) % 10;
+Console.WriteLine(result);
