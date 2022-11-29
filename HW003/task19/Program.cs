@@ -4,14 +4,14 @@
 // 12821 -> да
 // 23432 -> да
 
-int[] num =  new int {};
+// int[] num =  new int {};
 
-Console.WriteLine("Введите число ");
-num = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите число ");
+// num = Convert.ToInt32(Console.ReadLine());
 
-foreach (int n in num)
-{
-    Console.WriteLine(n);
-}
+// foreach (int n in num)
+// {
+//     Console.WriteLine(n);
+// }
 
 
