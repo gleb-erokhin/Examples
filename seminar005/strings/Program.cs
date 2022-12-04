@@ -1,9 +1,9 @@
 ﻿// // краткая информация по строкам. Имеют очень много операций
-// string s1 = "Bob";
-// string s2 = "Mary";
-// // сложение строк конкатенация
-// string s3 = s1 + " - " + s2;
-// // Console.WriteLine(s3);
+string s1 = "Bob";
+string s2 = "Mary";
+// сложение строк конкатенация
+string s3 = s1 + " - " + s2;
+// Console.WriteLine(s3);
 
 // // метод Concat
 // string s4 = string.Concat(s1, " - ", s2);
