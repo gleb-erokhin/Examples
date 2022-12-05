@@ -59,4 +59,4 @@ foreach (var i in n)
 
 
 //  короткий способ
-int[] num = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+// int[] num = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
