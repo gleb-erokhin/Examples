@@ -2,41 +2,41 @@
 // [1 2 3 4 5] -> 5 8 3
 // [6 7 3 6] -> 36 21
 
-using System;
-using static System.Console;
+// using System;
+// using static System.Console;
 
-Clear();
+// Clear();
 
-Write("Введите размер массива: ");
-int size = int.Parse(ReadLine());
-int[] array = fillArray(size, 0, 1000);
-WriteLine($"[{String.Join(",", array)}]");
-Write(findNumbArray(array, 10, 99));
-
-
-
-int[] fillArray(int size, int minValue, int maxValue) //заполнение массива
-{
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next(minValue, maxValue + 1);
-    }
+// Write("Введите размер массива: ");
+// int size = int.Parse(ReadLine());
+// int[] array = fillArray(size, 0, 1000);
+// WriteLine($"[{String.Join(",", array)}]");
+// Write(findNumbArray(array, 10, 99));
 
 
-    return array;
 
-}
+// int[] fillArray(int size, int minValue, int maxValue) //заполнение массива
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
 
-int findNumbArray(int[] array, int left, int right)
-{
-    int result = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] >= left && array[i] <= right)
-        {
-            result++;
-        }
-    }
-    return result;
-}
+
+//     return array;
+
+// }
+
+// int findNumbArray(int[] array, int left, int right)
+// {
+//     int result = 0;
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] >= left && array[i] <= right)
+//         {
+//             result++;
+//         }
+//     }
+//     return result;
+// }
