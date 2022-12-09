@@ -9,20 +9,31 @@ double[] arayRandomDouble(int data)
     double[] array = new double[data];
     for (int i = 0; i < data; i++)
     // сохранаяем случайное значение элемента в массив
-        array[i] = Math.Round(rand.NextDouble(), 5);
+        // array[i] = Math.Round((rand.NextDouble()) * 100, 5);
+        array[i] = rand.NextDouble();
+
     return array; // возвращаем массив
 }
 
-double MaxMin(double[] input)
+double[] MaxMin(double[] input)
 {
     double max = input[0];
     double min = input[0];
+    double[] res = new double[2];
     for (int i = 0; i < input.Length; i++) // проходим по элементам массива 
     {
-        if (input[i] > max) max = input[i];  // проверяем элемент на четность
-        else if (input[i] < min) min = input[i];
+        if (input[i] > max) 
+        {
+            max = input[i];
+        }
+        if (input[i] < min) 
+        {
+            min = input[i];
+        }
+        res[0] = max;
+        res[1] = min;
     }
-    return (max - min);
+    return res;
 }
 // Метод производит печать созданного массива
 void PrintData(double[] arr)
@@ -39,5 +50,8 @@ int arrayRange = Convert.ToInt32(Console.ReadLine());
 // вызываем методы
 double[] arrayDoubleData = arayRandomDouble(arrayRange);    // воод аргумента с размером массива
 PrintData(arrayDoubleData);                                 // печатаем случайный массив
-double answer = MaxMin(arrayDoubleData);
-Console.WriteLine($"Разница равна между max и min {Math.Round(answer, 5)}");
+double[] answer = MaxMin(arrayDoubleData);
+Console.WriteLine();
+Console.Write($"Разница между max {answer[0]}");
+Console.WriteLine($" и min {answer[1]} = {answer[0] - answer[1]}");
+
