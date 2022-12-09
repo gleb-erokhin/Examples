@@ -7,25 +7,22 @@ double[] arayRandomDouble(int data)
     // создается один генератор случайных чисел c вызовом метода NextDouble
     Random rand = new Random();
     double[] array = new double[data];
-        // Store random floating point 
-        // numbers in the array
     for (int i = 0; i < data; i++)
-        // сохранаяем случайное значение элемента в массив
-        array[i] = rand.NextDouble();
+    // сохранаяем случайное значение элемента в массив
+        array[i] = Math.Round(rand.NextDouble(), 5);
     return array; // возвращаем массив
 }
 
-double[] MaxMin(double[] input)
+double MaxMin(double[] input)
 {
-    int count = 0; // счетчик четных чисел
+    double max = input[0];
+    double min = input[0];
     for (int i = 0; i < input.Length; i++) // проходим по элементам массива 
     {
-        if (array[i] % 2 == 0) // проверяем элемент на четность
-        {
-            count++; // если true увеличиваем на 1
-        }
+        if (input[i] > max) max = input[i];  // проверяем элемент на четность
+        else if (input[i] < min) min = input[i];
     }
-    return count; // возвращаем количество четных элементов
+    return (max - min);
 }
 // Метод производит печать созданного массива
 void PrintData(double[] arr)
@@ -42,6 +39,5 @@ int arrayRange = Convert.ToInt32(Console.ReadLine());
 // вызываем методы
 double[] arrayDoubleData = arayRandomDouble(arrayRange);    // воод аргумента с размером массива
 PrintData(arrayDoubleData);                                 // печатаем случайный массив
-// int y = SumNum(x);                           // подаем массив на вход метода для суммирования элем. нечетной позиции
-// Console.WriteLine();
-// Console.WriteLine($"Сумма элементов на нечетной позиции в массиве = {y}");  // выводим сумму элементов
+double answer = MaxMin(arrayDoubleData);
+Console.WriteLine($"Разница равна между max и min {Math.Round(answer, 5)}");
