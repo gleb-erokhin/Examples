@@ -11,7 +11,7 @@ double[] arayRandomDouble(int data)
     // сохранаяем случайное значение элемента в массив
         // array[i] = Math.Round((rand.NextDouble()) * 100, 5);
         array[i] = rand.NextDouble();
-
+        // дробное число можно получить поделить число на 2 и так далее
     return array; // возвращаем массив
 }
 
