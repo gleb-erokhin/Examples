@@ -17,7 +17,7 @@ int[,] nums2 = {{1,2,3,4}, {5,6,7,8}, {9,0,3,5}};
 
 for (int i = 0; i < nums2.GetLength(0); i++)  // подсчет размерности массива через метод, (0) в скобках ссылается на строку 12 int[3, 4]
 {
-    for (int j = 0; j < 4; j++)
+    for (int j = 0; j < nums2.GetLength(1); j++)
     {
         Console.Write($"{nums2[i, j]} ");
     }
