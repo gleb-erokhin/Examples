@@ -39,10 +39,10 @@ Console.WriteLine(s11);
 // +++ split +++
 string s = "1, 2, 3, 4, 5, 6, 7.";
 // разбиваем через пустую строку
-// string[] nums = s.Split(' ');
+string[] nums = s.Split(' ');
 // убрать запятые и точки, но мы получим подстроку между словом и запятой, split разъединяет - а не вырезает.
 // string[] nums = s.Split(' ', '.', ',');
-string[] nums = s.Split(new char[]{' ', '.', ','}, StringSplitOptions.RemoveEmptyEntries);
+// string[] nums = s.Split(new char[]{' ', '.', ','}, StringSplitOptions.RemoveEmptyEntries);
 
 
 // перебирает с каждой итерацией значение
