@@ -5,35 +5,35 @@
 // 8 7,8 -7,1 9
 
 
-float[,] arrRand()
+decimal[,] arrRand()
 {
-    float[,] a = new float[3,4];
+    decimal[,] a = new decimal[3,4];
     Random rand = new Random();
-    float min = -10;
-    float max = 10;
+    decimal min = -1;
+    decimal max = 10 / 2;
     for (int i = 0; i < a.GetLength(0); i++)
     {
         for (int j = 0; j < a.GetLength(1); j++)
         {
-            float randomFloat = (float)rand.NextDouble();
-            a[i,j] = (randomFloat * (max - min)) + min;
+            decimal randomdecimal = Math.Round((decimal)rand.NextDouble(), 2);
+            a[i,j] = (randomdecimal * (max - min)) + min;
         }
     }
     return a;
 }
 
 
-void PrintArray(float[,] array)
+void PrintArray(decimal[,] array)
 {
   for (int i = 0; i < array.GetLength(0); i++)
   {
     for (int j = 0; j < array.GetLength(1); j++)
     {
-      Console.Write($"{array[i, j]} ");
+      Console.Write($" {array[i, j]} ");
     }
     Console.WriteLine();
   }
 }
 
-float[,] x = arrRand();
+decimal[,] x = arrRand();
 PrintArray(x);
