@@ -21,23 +21,14 @@ int[,] arrRand()
 
 void FindPosition(int num1, int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
+    if (num1 > array.GetLength(0) && num2 > array.GetLength(1))
         {
-            if (num1 == array[i, j])
-            {
-                Console.WriteLine("test");
-                break;
-            }
-            else
-            {
-                Console.WriteLine("net");
-
-            }
+            Console.WriteLine($"{array[num1, num2]}");
         }
-        
-    }
+        else
+        {
+            Console.WriteLine("net znacheniya");
+        }
 }
 
 
