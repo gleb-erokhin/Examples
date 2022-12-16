@@ -8,21 +8,25 @@
 decimal[,] arrRand()
 {
     decimal[,] a = new decimal[3,4];
+    // объявляем экземпляр класса Random
     Random rand = new Random();
+    //  создаем дополнительные переменные для вычисления вещественного числа
     decimal min = -1;
     decimal max = 10 / 2;
     for (int i = 0; i < a.GetLength(0); i++)
     {
         for (int j = 0; j < a.GetLength(1); j++)
         {
+            // получаем случайное вещественное число и сразу его округляем
             decimal randomdecimal = Math.Round((decimal)rand.NextDouble(), 2);
+            // помещаем число в массив по индексам, применяя дополнительную обработку значения
             a[i,j] = (randomdecimal * (max - min)) + min;
         }
     }
     return a;
 }
 
-
+// печатаем массив
 void PrintArray(decimal[,] array)
 {
   for (int i = 0; i < array.GetLength(0); i++)
@@ -35,5 +39,6 @@ void PrintArray(decimal[,] array)
   }
 }
 
+// вызываем функцию
 decimal[,] x = arrRand();
 PrintArray(x);
