@@ -18,20 +18,16 @@ int[,] arrRand()
     return a;
 }
 
-int[,] Average(int[,] a)
+void Average(int[,] a)
 {
-  int[] b = new int[4];
-  int sum = 0;
-  int 
   for (int j = 0; j < a.GetLength(1); j++)
   {
+      int sum = 0;
       for (int i = 0; i < a.GetLength(1); i++)
         {
-          sum = sum + a[j,i];
+          sum = sum + a[i, j];
         }
-        b[i] = sum / j;
   }
-  return b;
 }
 
 void PrintArray(int[,] array)
