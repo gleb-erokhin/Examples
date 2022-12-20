@@ -7,27 +7,36 @@
 
 int[,] arrRand()
 {
-    int[,] a = new int[3,4];
-    for (int i = 0; i < a.GetLength(0); i++)
-    {
-        for (int j = 0; j < a.GetLength(1); j++)
-        {
-            a[i,j] = new Random().Next(1, 10); 
-        }
-    }
+    int[,] a = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12} };
+    
+    // int[,] a = new int[3,4];
+    // for (int i = 0; i < a.GetLength(0); i++)
+    // {
+    //     for (int j = 0; j < a.GetLength(1); j++)
+    //     {
+    //         a[i,j] = new Random().Next(1, 10); 
+    //     }
+    // }
     return a;
 }
 
 void Average(int[,] a)
 {
-  for (int j = 0; j < a.GetLength(1); j++)
+  float sum = 0;
+  float[] res = new float[4];
+  for (int i = 0; i < a.GetLength(0); i++)
   {
-      int sum = 0;
-      for (int i = 0; i < a.GetLength(1); i++)
+      for (int j = 0; j < a.GetLength(1); j++)
         {
-          sum = sum + a[i, j];
+          
+          sum = sum + a[j, i];
+          Console.WriteLine($" 2 for {sum }");
+          Console.WriteLine($" j {j}");
+          Console.WriteLine($" i {i}"); 
         }
   }
+  Console.WriteLine($"{sum / a.GetLength(1)}");
+  
 }
 
 void PrintArray(int[,] array)
@@ -44,3 +53,5 @@ void PrintArray(int[,] array)
 
 int[,] x = arrRand();
 PrintArray(x);
+// float[] y = Average(x);
+Average(x);
