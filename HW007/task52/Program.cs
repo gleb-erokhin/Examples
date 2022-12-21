@@ -5,47 +5,33 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-int[,] arrRand()
+int[,] arrRand() // создание двумерного массива с целыми случайными числами
 {
-    int[,] a = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12} };
-    
-    // int[,] a = new int[3,4];
-    // for (int i = 0; i < a.GetLength(0); i++)
-    // {
-    //     for (int j = 0; j < a.GetLength(1); j++)
-    //     {
-    //         a[i,j] = new Random().Next(1, 10); 
-    //     }
-    // }
+    int[,] a = new int[3,4];
+    for (int i = 0; i < a.GetLength(0); i++)
+    {
+        for (int j = 0; j < a.GetLength(1); j++)
+        {
+            a[i,j] = new Random().Next(1, 10); 
+        }
+    }
     return a;
 }
 
-void Average(int[,] a)
+void Average(int[,] a) // получение среднего арифмитеческого значения
 {
-  int[] sum = new int[4];
-  for (int i = 0; i < a.GetLength(0); i++)
+  for (int j = 0; j < a.GetLength(1); j++)       
   {
-      for (int j = 0; j < a.GetLength(1); j++)
+      double sum = 0;
+      for (int i = 0; i < a.GetLength(0); i++)
         {
-          
-          Console.WriteLine($"before {i}");
-          Console.WriteLine($"before {j}");
-          sum[i] += a[j, i];
-          Console.WriteLine($"after {i}");
-          Console.WriteLine($"after {j}");
-
+          sum += a[i, j];
         }
-        Console.WriteLine();
+        Console.Write($"{Math.Round(sum / 3, 1)}, ");
   }
-  Console.WriteLine();
-  foreach(float s in sum)
-  {
-    Console.WriteLine(s / 4);
-  }
-  
 }
 
-void PrintArray(int[,] array)
+void PrintArray(int[,] array) // печать массива
 {
   for (int i = 0; i < array.GetLength(0); i++)
   {
@@ -59,5 +45,5 @@ void PrintArray(int[,] array)
 
 int[,] x = arrRand();
 PrintArray(x);
-// float[] y = Average(x);
+Console.Write("Среднее арифметическое каждого столбца: ");
 Average(x);
