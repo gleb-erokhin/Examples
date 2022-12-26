@@ -32,7 +32,27 @@ void PrintArray(int[,] array) // печать массива
   }
 }
 
+void Print2Array(int[,] a, int[,] b) // печать массива
+{
+  for (int i = 0; i < a.GetLength(0); i++)
+  {
+    for (int j = 0; j < a.GetLength(1); j++)
+    {
+      Console.Write($" {a[i, j]} ");
+    }
+    // Console.WriteLine();
+  }
 
+  for (int k = 0; k < b.GetLength(0); k++)
+  {
+    for (int l = 0; l < b.GetLength(1); l++)
+    {
+      Console.Write($"| {b[k, l]} ");
+    }
+    // Console.WriteLine();
+    
+  }
+}
 
 int[] Mul(int[,] a, int[,] b)
 { 
@@ -61,24 +81,23 @@ int[,] ansver(int[] a)
 }
 
 // Создаем два случайных двумерных массива и даем им переменные
-// int[,] a = arrRand();
-// int[,] b = arrRand();
-int[,] a = {{2, 4}, {3, 2}};
-int[,] b = {{3, 4}, {3, 3}};
+int[,] a = arrRand();
+int[,] b = arrRand();
+
 // перемножаем данные двух массивов и получаем обычный массив из 4 значений
 int[] c = Mul(a, b);
  
 // печатаем оба массива
-PrintArray(a);
+Print2Array(a, b);
 Console.WriteLine();
-PrintArray(b);
-Console.WriteLine();
+// PrintArray(b);
+// Console.WriteLine();
 
 int[,] ans = ansver(c);
 PrintArray(ans);
 
-Console.WriteLine("одинарный массив");
+Console.WriteLine("одинарный массив, для проверки: ");
 foreach (int n in c)
 {
-    Console.WriteLine(n);
+    Console.Write($" {n}, ");
 }
