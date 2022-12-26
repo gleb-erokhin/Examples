@@ -20,7 +20,7 @@ int[,] arrRand() // создание двумерного массива с це
     return a;
 }
 
-void PrintArray(int[,] array) // печать массива
+void PrintArray(int[,] array) // печать результирующего массива
 {
   for (int i = 0; i < array.GetLength(0); i++)
   {
@@ -32,29 +32,24 @@ void PrintArray(int[,] array) // печать массива
   }
 }
 
-void Print2Array(int[,] a, int[,] b) // печать массива
+void Print2Array(int[,] a, int[,] b) // печать вводных массивов
 {
   for (int i = 0; i < a.GetLength(0); i++)
   {
     for (int j = 0; j < a.GetLength(1); j++)
     {
-      Console.Write($" {a[i, j]} ");
+      Console.Write($"{a[i,j]} ");
     }
-    // Console.WriteLine();
-  }
-
-  for (int k = 0; k < b.GetLength(0); k++)
-  {
-    for (int l = 0; l < b.GetLength(1); l++)
+    Console.Write("| ");
+    for (int j = 0; j < b.GetLength(1); j++)
     {
-      Console.Write($"| {b[k, l]} ");
+      Console.Write($"{b[i,j]} ");
     }
-    // Console.WriteLine();
-    
+    Console.WriteLine();
   }
 }
 
-int[] Mul(int[,] a, int[,] b)
+int[] Multiply(int[,] a, int[,] b)
 { 
   int[] res = new int[4];
   for (int i = 0; i < res.Length; i++)
@@ -65,7 +60,7 @@ int[] Mul(int[,] a, int[,] b)
   return res;
 }
 
-int[,] ansver(int[] a)
+int[,] Convert(int[] a)  // Метод для перевода одинарного массива в двумерный массив
 {
   int[,] c = new int[2, 2];
   int count = 0;
@@ -85,17 +80,17 @@ int[,] a = arrRand();
 int[,] b = arrRand();
 
 // перемножаем данные двух массивов и получаем обычный массив из 4 значений
-int[] c = Mul(a, b);
+int[] c = Multiply(a, b);
  
-// печатаем оба массива
+// печатаем оба входных случайных массива
 Print2Array(a, b);
 Console.WriteLine();
-// PrintArray(b);
-// Console.WriteLine();
 
-int[,] ans = ansver(c);
+// Печатаем результирующий массив
+int[,] ans = Convert(c);
 PrintArray(ans);
 
+// для проверки что одинарный массив верный с результирующим
 Console.WriteLine("одинарный массив, для проверки: ");
 foreach (int n in c)
 {
