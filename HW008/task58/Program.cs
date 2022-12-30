@@ -83,16 +83,21 @@ int[,] b = arrRand();
 int[] c = Multiply(a, b);
  
 // печатаем оба входных случайных массива
+Console.WriteLine("Исходные массивы: ");
 Print2Array(a, b);
 Console.WriteLine();
 
 // Печатаем результирующий массив
+Console.WriteLine("Результирующий массив: ");
 int[,] ans = Convert(c);
 PrintArray(ans);
 
 // для проверки что одинарный массив верный с результирующим
+Console.WriteLine();
 Console.WriteLine("одинарный массив, для проверки: ");
-foreach (int n in c)
+
+for (int i = 0; i < c.Length; i++)
 {
-    Console.Write($" {n}, ");
+  if(i == c.Length - 1) Console.Write($" {c[i]} ");
+  else Console.Write($" {c[i]}, ");
 }
