@@ -8,21 +8,20 @@
 // 9 5 3 2
 // 8 4 4 2
 
-
-for(int row = 0; row < array.GetLength(0); row++)
+int[,] RandomArray(int a, int b)  // метод создания случайного двумерного массива
 {
-    for(int col = 0; col < array.GetLength(1); col++)
+    int[,] rand = new int[a, b];
+    for(int row = 0; row < rand.GetLength(0); row++)
     {
-        if(array[row, col] > array[row, col + 1])
+        for(int col = 0; col < rand.GetLength(1); col++)
         {
-            int k = array[row, col];
-            array[row, col] = array[row, col + 1];
-            array[row, col + 1] = k;
+            rand[row, col] = new Random().Next(1, 10);
         }
     }
-    // Console.WriteLine();
+    return rand;
 }
-int[,] Array(int[,] array)
+
+int[,] ArraySort(int[,] array)  // метод пузырьковой сортировки двумерного массива от большого к меньшему
 {
     for(int row = 0; row < array.GetLength(0); row++)
     {
@@ -30,7 +29,6 @@ int[,] Array(int[,] array)
         {
             for(int i = 0; i < array.GetLength(1) - 1; i++)
             {
-                // Console.WriteLine($"(row {row}, col {col})  = {array[row, col]}");
                 if(array[row, i] < array[row, i + 1])
                 {
                     int k = array[row, i];
@@ -38,34 +36,37 @@ int[,] Array(int[,] array)
                     array[row, i + 1] = k;
                 }
             }
-            // Console.WriteLine($"(row {row}, col + 1 {col + 1}) = {array[row, col + 1]}");
-            // if(array[row, col] > array[row, col + 1])
-            // {
-            //     Console.WriteLine($"col {array[row, col]}");
-            //     Console.WriteLine($"col + 1 {array[row, col + 1]}");
-            // }
         }
-        // Console.WriteLine();
     }
     return array;
 }
 
-void printArr(int[,] a)
+
+void printArr(int[,] a)  // метод печати двумерного массива
 {
-    for (int i = 0; i < a.GetLength(0); i++)  // подсчет размерности массива через метод, (0) в скобках ссылается на строку 12 int[3, 4]
-{
-    for (int j = 0; j < a.GetLength(1); j++)
+    for (int i = 0; i < a.GetLength(0); i++)
     {
-        Console.Write($"{a[i, j]} ");
+        for (int j = 0; j < a.GetLength(1); j++)
+        {
+            Console.Write($"{a[i, j]} ");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
-}
 }
 
+// Вводим количество строк и столбцов
+Console.WriteLine("Введите количество строк: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+// Вводим значения в метод для создания случайного двумерного массива и печатаем его
+int[,] x = RandomArray(n, m);
 Console.WriteLine("Исходный массив: ");
-int[,] array = {{1, 4, 7, 2}, {5, 9, 2, 3}, {8, 4, 2, 4}};
-printArr(array);
-int[,] x = Array(array);
+printArr(x);
+
+// Добавляем в метод для сотировки и печатаем вывод
 Console.WriteLine();
 Console.WriteLine("Отсортированный массив: ");
-printArr(x);
+int[,] y = ArraySort(x);
+printArr(y);
